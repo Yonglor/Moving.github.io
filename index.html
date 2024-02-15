@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>돌아다니기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+         <p style="display: inline;">돈:</p>
+        <p style="display: inline;" id="dism">0</p>
+        <h3>게임 방법:w,a,s,d를 사용해 움직여 돈을 벌고 여러 아이템을 사자!</h3>
+    </div>
+    <h1>샵</h1>
+    <div>좋은 신발</div>
+    <div>2000원</div>
+    <div>속도와 한번 움직일때마다 돈이 2원씩 벌린다.</div>
+    <button onclick="if(money > 2000) {
+        shoes();
+    } else {
+        qwe();
+    }">구매</button>
+
+    <div id="ball"></div>
+    <style>
+        #ball {
+          width: 50px;
+          height: 50px;
+          background-color: red;
+          position: absolute;
+        }
+      </style>
+
+<script src="script.js"></script>
+    <!--<p id="pid"></p>-->
+    <script>
+        let money = 0
+        // var nothide = document.getElementById("pid")
+        // nothide.innerHTML = '안녕!'
+        let ballPosition = { x:500, y:500}
+        function moveBall() {
+    const ballElement = document.getElementById('ball');
+    ballElement.style.left = ballPosition.x + 'px';
+    ballElement.style.top = ballPosition.y + 'px';
+  }
+
+    </script>
+            <script>
+                
+                
+                
+                document.addEventListener('keydown',function letgo3(event) {
+                    if (event.key === 'w' || event.key === 'W') {
+                        money += 1;
+                    ballPosition.y -= 30;
+                    moveBall();
+                    hellow.innerHTML = money;
+                }
+            })
+            
+            document.addEventListener('keydown', function letgo2(event) {
+                    if (event.key === 's' || event.key === 'S') {
+                    ballPosition.y += 30;
+                    moveBall();
+                    money += 1;
+                    hellow.innerHTML = money;
+                }
+            })
+
+            document.addEventListener('keydown', function letgo1(event) {
+                    if (event.key === 'a' || event.key === 'A') {
+                    ballPosition.x -= 30;
+                    moveBall();
+                    money += 1;
+                    hellow.innerHTML = money;
+                }
+            })
+            document.addEventListener('keydown', function finallyIfoundit(event) {
+                if (event.key === 'd' || event.key === 'D') {
+                    ballPosition.x += 30;
+                    moveBall();
+                    money += 1;
+                    hellow.innerHTML = money;
+                }
+            })
+
+   
+                
+                 
+                
+                
+                
+                
+                
+                
+                
+                </script>
+</body>
+</html>
